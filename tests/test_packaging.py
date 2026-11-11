@@ -12,6 +12,8 @@ import re
 import sys
 from pathlib import Path
 
+import pytest
+
 try:
     import tomllib
 except ModuleNotFoundError:  # Python <= 3.10: tomllib landed in 3.11
@@ -142,6 +144,23 @@ def test_readme_exists_and_declares_itself():
     assert (SRC / "__init__.py").exists()
 
 
+def _every_test_module_can_run() -> bool:
+    """The badge number is only meaningful where nothing skips itself.
+
+    tests/test_pytoml_parity.py skips wholesale without tomllib (3.11+), so a
+    3.10 leg collects 183 items while a 3.11+ leg collects 188. Comparing the
+    badge there would fail on every 3.10 run with no actual drift. Enforcement
+    lives in the CI badge job, which runs on 3.12.
+    """
+    import importlib.util
+
+    return importlib.util.find_spec("tomllib") is not None
+
+
+@pytest.mark.skipif(
+    not _every_test_module_can_run(),
+    reason="badge count is validated on 3.11+, where the parity suite runs",
+)
 def test_readme_test_count_matches_collection():
     """Reads the badge in README.md; keeps the headline number honest."""
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
