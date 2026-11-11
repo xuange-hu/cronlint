@@ -17,6 +17,16 @@ and the `/etc/crontab` user column.
 uvx --from "git+https://github.com/xuange-hu/cronlint" cronlint demo
 ```
 
+## Contents
+
+- [Why a cron linter](#why-a-cron-linter)
+- [3-step start](#3-step-start)
+- [Shapes it understands](#shapes-it-understands)
+- [Exit codes gate CI](#exit-codes-gate-ci)
+- [MCP server](#mcp-server)
+- [Install from a clone](#install-from-a-clone)
+- [License](#license)
+
 ## Why a cron linter
 
 Crontab entries fail quietly. Four failure modes a shell never warns you about:

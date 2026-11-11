@@ -16,6 +16,16 @@ English: [README.md](README.md)
 uvx --from "git+https://github.com/xuange-hu/cronlint" cronlint demo
 ```
 
+## 目录
+
+- [为什么需要一个 cron linter](#为什么需要一个-cron-linter)
+- [三步上手](#三步上手)
+- [它认识的形状](#它认识的形状)
+- [退出码即 CI 卡点](#退出码即-ci-卡点)
+- [MCP 服务端](#mcp-服务端)
+- [从克隆安装](#从克隆安装)
+- [许可](#许可)
+
 ## 为什么需要一个 cron linter
 
 crontab 配错不会报错，只会静默地在错误的时间执行。四类 shell 不会提醒你的问题：
