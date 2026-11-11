@@ -1,7 +1,7 @@
 # cronlint
 
 [![CI](https://github.com/xuange-hu/cronlint/actions/workflows/ci.yml/badge.svg)](https://github.com/xuange-hu/cronlint/actions/workflows/ci.yml)
-![tests-188%20passing](https://img.shields.io/badge/tests-188%20passing-brightgreen)
+![tests-189%20passing](https://img.shields.io/badge/tests-189%20passing-brightgreen)
 ![dependencies-0](https://img.shields.io/badge/dependencies-0-blue)
 ![license-MIT](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -144,7 +144,7 @@ imported inside `build_server()` only — the CLI never loads it
 git clone https://github.com/xuange-hu/cronlint
 cd cronlint
 pip install -e ".[mcp]" pytest ruff
-pytest          # 188 tests
+pytest          # 189 tests
 ruff check src tests
 ```
 

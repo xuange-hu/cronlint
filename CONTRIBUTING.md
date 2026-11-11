@@ -10,7 +10,7 @@ Contributions that keep it that way are welcome.
 git clone https://github.com/xuange-hu/cronlint
 cd cronlint
 pip install -e ".[mcp]" pytest ruff
-pytest                 # 188 tests
+pytest                 # 189 tests
 ruff check src tests
 ```
 
